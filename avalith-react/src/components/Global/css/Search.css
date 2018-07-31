@@ -1,0 +1,10 @@
+.Search {
+    padding: 10%;
+}
+input.transparent-input{
+    background-color:rgba(0,0,0,0) !important;
+    color: white;
+    border: 0; 
+    border-bottom: 1px solid white; 
+}
+

@@ -1,0 +1,15 @@
+.Post {
+  background-color: white;
+}
+.Post .row{
+    margin:0 0 2% 0;
+}
+.Header-Img{
+    position: relative;
+}
+.Btn-Back{
+    position: absolute;
+    top: 2%;
+}
+
+

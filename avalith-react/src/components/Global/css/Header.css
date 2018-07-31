@@ -1,0 +1,10 @@
+.Header {
+  background-color: black;
+  /* height: 150px; */
+  padding: 10px;
+  color: white;
+}
+
+.Logo img {
+  height: 40px;
+}
