@@ -4,9 +4,6 @@ import styled from 'styled-components';
 import StyledItem from './styled';
 
 class MainItem extends Component {
-    static propTypes = {
-        cards: PropTypes.object.isRequired
-    }
     render() {
         return (
             <StyledItem cards={this.props.cards} />

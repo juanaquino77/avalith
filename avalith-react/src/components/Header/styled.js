@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Logo from '../Logo';
-
+// const styles = {
+//     transition: 'all 1s ease-out'
+// };
 class StyledHeader extends Component {
 
     render() {
@@ -12,11 +14,11 @@ class StyledHeader extends Component {
             text-align:left;
             `;
         return (
-            <div>
-                <HeaderWapper>
-                    <Logo />
+            <div >
+                <HeaderWapper >
+                    <Logo >
+                    </Logo>
                 </HeaderWapper>
-                
             </div>
         );
     }

@@ -8,8 +8,10 @@ class StyledTitle extends Component {
         titulo: PropTypes.string.isRequired
     };
     render() {
-        const Titulo = styled.h4`
+        const Titulo = styled.h3`
             width: 100%;
+            text-transform: uppercase;
+            padding: 3%;
             `;
         return (
             <Titulo>

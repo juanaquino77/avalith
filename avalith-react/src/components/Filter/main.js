@@ -6,7 +6,7 @@ class FilterMain extends Component {
     render() {
         return (
             <div>
-                <StyledFilter/ >
+                <StyledFilter />
             </div>
         );
     }

@@ -5,15 +5,14 @@ import MainContent from './main';
 
 class Content extends Component {
     static PropTypes = {
-        it: PropTypes.array.isRequired,
-        tech: PropTypes.string.isRequired
+        page: PropTypes.object.isRequired
     };
-
     render() {
-    
+        const {body, page} = this.props;
         return (
-            
-            <MainContent />
+            <div>
+                <MainContent page={page} />
+             </div>
         );
     }
 }

@@ -1,12 +1,13 @@
-//Dependencies
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import StyledSearch from './styled';
+import Items from '../../data/Menu'
 
 class SearchMain extends Component {
+
     render() {
+
         return (
-            <StyledSearch />
+            <StyledSearch cards={Items}/>
         );
     }
 }

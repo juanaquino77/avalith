@@ -7,13 +7,13 @@ import styled from 'styled-components';
 class StyledAside extends Component {
     render() {
         const AsideWapper = styled.div`
-            height: 600px;
+            height: 1300px;
             width: 100%;
             background-color: black;
             color: white;
             `;
         return (
-            <AsideWapper>
+            <AsideWapper >
                 <Personal />
                 <Search />
                 <Filter />

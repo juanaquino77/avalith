@@ -1,9 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render} from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+// import { BrowserHistory } from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import App from './App';
+import AppRoutes from './routes';
+// import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+// import BrowserHistory  from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+render(
+    <Router>
+        <AppRoutes /> 
+    </Router>, 
+    document.getElementById('root'));
 registerServiceWorker();

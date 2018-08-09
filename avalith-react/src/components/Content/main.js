@@ -5,14 +5,15 @@ import PropTypes from 'prop-types';
 import { Row, Col, Container } from 'reactstrap';
 import Aside from '../Aside';
 class MainContent extends Component {
+    
     render() {
         return (
                 <Row>
-                    <Col md="3">
-                        <Aside onClick={this.onAlert} />             
+                    <Col lg="3" >
+                        <Aside />   
                     </Col>
-                    <Col md="9">
-                        <StyledContent />
+                    <Col lg="9" md="9">
+                        <StyledContent page={this.props.page}/>
                     </Col>
                 </Row>
         );
@@ -20,3 +21,6 @@ class MainContent extends Component {
 }
 
 export default MainContent;
+
+
+// md = { this.props.sidebar ? 5 : 3 }
