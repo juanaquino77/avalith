@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { consolidateStreamedStyles } from 'styled-components';
 import Post from '../Post';
-import Items from '../../data/Menu'
+import Items from '../../data/card.json'
 var pubsub = require('pubsub-js');
 class StyledItem extends Component {
     constructor(props) {
@@ -15,21 +15,19 @@ class StyledItem extends Component {
     render() {
         const Item = styled.div`
             background-color: #e7e7e7;
-            /* margin: 1%; */
+            
+            cursor: pointer;
             `;
         const Image = styled.img`
            height: 130px;
             width: 250px;
             `;
         return (
-            <div  >
-                <Item className="card">
-                    <a href="#" ><Image className="img-thumbnail" onClick={this.handleClick} id={this.props.cards.cardId} src={this.props.cards.cardImageUrl} alt="imagen" /></a>
+                <Item className="card" id={this.props.cards.cardId} onClick={this.props.postHandler}>
+                    <Image className="img-thumbnail" id={this.props.cards.cardId} src={this.props.cards.cardImageUrl} alt="imagen" />
                     <h5 className="card-title">{this.props.cards.cardTitle}</h5>
                     <p className="card-text" id={this.props.cards.cardId}>{this.props.cards.cardDescription}</p>
-                    <a href="#" className="btn btn-primary" onClick={this.handleClick} id={this.props.cards.cardId}>{this.props.cards.cardTitle}</a>
                 </Item>     
-            </div>  
         );
     }
 }

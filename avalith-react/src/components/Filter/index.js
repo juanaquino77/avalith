@@ -5,7 +5,7 @@ import FilterMain from './main';
 class Filter extends Component {
     render() {
         return (
-            <FilterMain />
+            <FilterMain filterHandler={this.props.filterHandler}/>
         );
     }
 }

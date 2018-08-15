@@ -5,7 +5,7 @@ class MainLogo extends Component {
     render() {
         return (
             <div>
-                <StyledLogo/>
+                <StyledLogo esconderMenu={this.props.esconderMenu}/>
             </div>
         );
     }

@@ -1,13 +1,18 @@
 //Dependencies
 import React, { Component } from 'react';
-import StyledPersonal from './styled';
+import { PersonalWapper } from './styled';
 
-class PersonalMain extends Component {
+class Personal extends Component {
     render() {
         return (
-            <StyledPersonal />
+            <PersonalWapper>
+                <div className="name"> dev name</div>
+                <div className="dni"> dni xx.xxx.xxx</div>
+                <div className="años"> xx years old</div>
+            </PersonalWapper>
+            
         );
     }
 }
             
-export default PersonalMain;
+export default Personal;

@@ -4,13 +4,16 @@ import MainPrincipal from './main';
 import PropTypes from 'prop-types';
 
 class Main extends Component {
-    static PropTypes = {
-        page: PropTypes.object.isRequired
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            cardId: 0,
+            card: {}
+        }
+    }
     render() {
         return (
-
-            <MainPrincipal page={this.props.page} />
+            <MainPrincipal cards={this.props.cards} optionSelected={this.props.optionSelected} cardId={this.state.cardId} />
         );
     }
 }

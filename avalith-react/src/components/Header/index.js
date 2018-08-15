@@ -4,11 +4,9 @@ import MainHeader from './main';
 
 class Header extends Component {
     render() {
-
         return (
             <div>
-           
-                <MainHeader />
+                <MainHeader esconderMenu={this.props.esconderMenu}/>
             </div>
         );
     }

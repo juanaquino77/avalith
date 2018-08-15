@@ -1,43 +1,65 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import StyledMain from './styled';
+import { StyledMain } from './styled';
 import Articles from '../Articles';
 import Post from '../Post';
+// import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
+// import Articles from '../Articles';
+// import styled from 'styled-components';
+// import Post from '../Post';
+import Title from '../Title'
 
-import Items from '../../data/Menu'
-var pubsub = require('pubsub-js');
+// import Items from '../../data/card.json'
+// var pubsub = require('pubsub-js');
 class MainPrincipal extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            opcion: "",
-            cards: []
+            cardId: "",
+            card: {}
         }
     }
-    static PropTypes = {
-        page: PropTypes.object.isRequired
-    };
-    componentWillMount() {
-        let self = this;
-        this.pubsub_event = pubsub.subscribe('listener', function (topic, items) {
-            this.setState({ opcion: items })
-        }.bind(this)); 
-        this.pubsub_event_2 = pubsub.subscribe('listener2', function (topic, i) {
-            this.setState({ cards: i })
-        }.bind(this)); 
-        this.setState({ cards: Items });
+    // constructor(props){
+    //     super(props);
+    //     this.state = {
+    //         cardId: 0
+    //     }   
+    // }
+    componentWillMount = () => {
+        this.setState({ cardId: this.props.cardId })
     }
-    componentWillUnmount() {
-        pubsub.unsubscribe(this.pubsub_event);
-        pubsub.unsubscribe(this.pubsub_event2);
-        pubsub.unsubscribe(this.pubsub_event3);
+    postHandler = (e) => {
+        let tecnologia = this.props.cards
+            .filter((card) => {
+                return card.cardId == e.target.id;
+            });
+        this.setState({
+            cardId: e.target.id,
+            card: tecnologia
+        });
     }
     render() {
-        return (
-            <div>
-                <StyledMain opcionSeleccionada={this.state.opcion} Items={this.state.cards} page={this.props.page}  />
-            </div>
-        );
+        // return (
+        //     <div>
+        //         <StyledMain optionSelected={this.props.optionSelected} cards={this.props.cards} cardId={this.state.cardId} />
+        //     </div>
+        // );
+        if (this.state.cardId == 0) {
+            return (
+                <StyledMain>
+                    <Title titulo="languajes and technologies" />
+                    <Articles cards={this.props.cards} postHandler={this.postHandler} />
+                </StyledMain>
+            );
+        }
+        else {
+            return (
+                <StyledMain>
+                    <Post card={this.state.card[0]} cardId={this.state.cardId} postHandler={this.postHandler} />
+                </StyledMain>
+            );
+        }
     }
 }
 

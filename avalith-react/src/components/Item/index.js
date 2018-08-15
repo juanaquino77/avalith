@@ -8,7 +8,7 @@ class Item extends Component {
     }
     render() {
         return (
-            <MainItem cards={this.props.cards} />
+            <MainItem cards={this.props.cards} postHandler={this.props.postHandler}/>
         );
     }
 }

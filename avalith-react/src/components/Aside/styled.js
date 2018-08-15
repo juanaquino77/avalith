@@ -4,19 +4,19 @@ import Search from '../Search';
 import Filter from '../Filter';
 import styled from 'styled-components';
 
-class StyledAside extends Component {
-    render() {
         const AsideWapper = styled.div`
             height: 1300px;
             width: 100%;
             background-color: black;
             color: white;
             `;
+class StyledAside extends Component {
+    render() {
         return (
             <AsideWapper >
                 <Personal />
-                <Search />
-                <Filter />
+                <Search cards={this.props.cards} updateSearch={this.props.updateSearch}  />
+                <Filter filterHandler={this.props.filterHandler}/>
             </AsideWapper>
         );
     }

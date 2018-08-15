@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import StyledSearch from './styled';
-import Items from '../../data/Menu'
+import { StyledSearch } from './styled';
 
-class SearchMain extends Component {
+class Search extends Component {
 
     render() {
 
         return (
-            <StyledSearch cards={Items}/>
+            <StyledSearch onChange={this.props.updateSearch} />
+            
         );
     }
 }
 
-export default SearchMain;
+export default Search;

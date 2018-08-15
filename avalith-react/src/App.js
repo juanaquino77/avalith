@@ -6,24 +6,48 @@ import styled from 'styled-components';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
-// import Items from './data/Menu'
-const styles = {
-  transition: 'all 1s ease-out'
-};
-class App extends Component {
+// import Get from '../../services.js';
 
+import Items from './data/card.json'
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sideBar: "",
+      cards: []
+    }
+  }
+componentWillMount = () =>{
+  this.setState({
+    sideBar: 1,
+    cards: Items
+  })
+}
+  hideSideBar = () => {
+    if (this.state.sideBar == 0)  
+    {
+      this.setState({
+        sideBar: 1
+      })
+    }
+      else{
+        this.setState({
+          sideBar: 0
+        })
+      }
+  } 
 
   static PropTypes = {
     children: PropTypes.object.isRequired
   };
   render() {
     const {children} = this.props;
+    // console.log(Items);
     return (
       <div className="App">
         <Container>
-          <Header 
-           />
-          <Content tech="Titulo" page={children} />
+          <Header  esconderMenu={this.hideSideBar} />
+          <Content sideBar={this.state.sideBar} cards={this.state.cards} />
         </Container>
       </div>
     );

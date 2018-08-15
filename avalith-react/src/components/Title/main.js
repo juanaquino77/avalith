@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import StyledMain from './styled';
+import { StyledTitle } from './styled';
 
-class MainTitle extends Component {
-    static PropTypes = {
-        titulo: PropTypes.string.isRequired
-    };
+class Title extends Component {
+    // static PropTypes = {
+    //     titulo: PropTypes.string.isRequired
+    // };titulo={this.props.titulo}
     render() {
         return (
-            <StyledMain titulo={this.props.titulo}/>
+            <StyledTitle >
+                { this.props.titulo }
+            </StyledTitle>
+            
         );
     }
 }
 
-export default MainTitle;
+export default Title;

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import MainLogo from './main';
 
 class Logo extends Component {
+ 
     render() {
 
         return (
-            <MainLogo />
+            <MainLogo esconderMenu={this.props.esconderMenu} />
         );
     }
 }

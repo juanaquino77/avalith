@@ -1,13 +1,17 @@
-//Dependencies
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-import StyledHeader from './styled';
+import { StyledHeader } from './styled';
+import Logo from '../Logo';
 
 class MainHeader extends Component {
+
     render() {
         return (
-            <StyledHeader />
+            <div>
+                <StyledHeader>
+                    <Logo esconderMenu={this.props.esconderMenu} />
+                </StyledHeader  >
+            </div>
         );
     }
 }

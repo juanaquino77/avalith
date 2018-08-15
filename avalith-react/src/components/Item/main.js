@@ -6,7 +6,7 @@ import StyledItem from './styled';
 class MainItem extends Component {
     render() {
         return (
-            <StyledItem cards={this.props.cards} />
+            <StyledItem cards={this.props.cards} postHandler={this.props.postHandler} />
         );
     }
 }

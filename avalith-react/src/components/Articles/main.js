@@ -16,9 +16,9 @@ class MainArticles extends Component {
     // };
 
     render() {
-
+       
         return (
-            <StyledArticles it={this.props.it} tech={this.props.tech} />
+            <StyledArticles cards={this.props.cards} postHandler={this.props.postHandler}/>
         );
     }
 }
