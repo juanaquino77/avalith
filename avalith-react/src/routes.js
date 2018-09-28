@@ -4,8 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 import App from './App';
 // import About from './components/About';
 // import Contact from './components/Contact';
-import Post from './components/Post';
-import Main from './components/Main';
+import Post from './views/containers/Post';
+import Dashboard from './views/containers/Dashboard';
 
 // import App from './App';
 

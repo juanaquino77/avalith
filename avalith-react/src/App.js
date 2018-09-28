@@ -3,9 +3,9 @@ import {Link, Route, Router} from 'react-router';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Header from './components/Header';
-import Content from './components/Content';
-import Footer from './components/Footer';
+import Header from './views/components/Layout/Header';
+import Content from './views/containers/Content';
+import Footer from './views/components/Layout/Footer';
 // import Get from '../../services.js';
 
 import Items from './data/card.json'
@@ -19,30 +19,20 @@ class App extends Component {
   }
 componentWillMount = () =>{
   this.setState({
-    sideBar: 1,
+    sideBar: true,
     cards: Items
   })
 }
   hideSideBar = () => {
-    if (this.state.sideBar == 0)  
-    {
       this.setState({
-        sideBar: 1
+        sideBar: !this.state.sideBar
       })
-    }
-      else{
-        this.setState({
-          sideBar: 0
-        })
-      }
   } 
-
   static PropTypes = {
     children: PropTypes.object.isRequired
   };
   render() {
     const {children} = this.props;
-    // console.log(Items);
     return (
       <div className="App">
         <Container>
